@@ -1,0 +1,29 @@
+server:
+  port: 12101
+spring:
+  application:
+    name: config-server-bus
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/riyvitxgt/config-repo
+    bus:
+      destination: config-cloud-bus
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.1.14
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

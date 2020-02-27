@@ -1,0 +1,19 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: eureka-consumer-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+    fetch-registry: true
+feign:
+  hystrix:
+    #默认熔断是关闭的
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

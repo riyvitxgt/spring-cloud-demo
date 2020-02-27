@@ -1,0 +1,16 @@
+server:
+  port: 13101
+spring:
+  application:
+    name: config-client-bus
+  cloud:
+    bus:
+      destination: config-cloud-bus
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.1.14
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq

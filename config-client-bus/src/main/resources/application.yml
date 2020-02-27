@@ -1,0 +1,17 @@
+server:
+  port: 13100
+spring:
+  application:
+    name: config-client-bus
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+      # 指定rabbitmq的exchange
+      destination: config-cloud-bus
+  rabbitmq:
+    host: 192.168.1.14
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
